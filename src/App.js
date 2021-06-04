@@ -81,7 +81,7 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    axios.get(`http://localhost:8000/api/`, {headers: {'KEY': '3c0ce0e0f6befa66ff18d9276f72f795d551774207f5b81feb438d661de07082'}})
+    axios.get(`https://hashme.herokuapp.com/api/`, {headers: {'KEY': '3c0ce0e0f6befa66ff18d9276f72f795d551774207f5b81feb438d661de07082'}})
         .then(res => {
           const data = res.data['encoders'];
           let buttons = [];
@@ -146,7 +146,7 @@ class App extends React.Component {
     } else {
       body['bits'] = this.state.bitValue;
     }
-    axios.post(`http://localhost:8000/api/`, body, options)
+    axios.post(`https://hashme.herokuapp.com/api/`, body, options)
         .then(res => {
           let hashed = res.data['hashed'];
           this.setState({
